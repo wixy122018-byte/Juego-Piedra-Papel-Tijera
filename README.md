@@ -13,39 +13,37 @@ Una vez ya se puede evidenciar el proceso lógico que sigue el programa podemos 
 
 
 ## Código Python del Juego Tradicional
-```markdown
 ```python
-
 import random
-#BUCLE DE INICIO DE JUEGO
+# BUCLE DE INICIO DE JUEGO
 while True:
 
- print("Bienvenido al juego Piedra, Papel o Tijera")
+    print("Bienvenido al juego Piedra, Papel o Tijera")
 
-#LISTA DE JUEGO
- opciones=["Piedra","Papel","Tijera"]
+    # LISTA DE JUEGO
+    opciones = ["Piedra", "Papel", "Tijera"]
 
- jugador= input("Elige Piedra, Papel o Tijera: ").title()
- computadora=(random.choice(opciones))
+    jugador = input("Elige Piedra, Papel o Tijera: ").title()
+    computadora = random.choice(opciones)
 
- print("jugador:", jugador)
- print("computadora:", computadora)
+    print("jugador:", jugador)
+    print("computadora:", computadora)
 
-#CONDICIONES DE JUEGO
- if jugador == computadora:
-    print("Empate!")
- elif (jugador == "Piedra" and computadora == "Tijera") or (jugador == "Papel" and computadora == "Piedra") or (jugador == "Tijera" and computadora == "Papel"):
-    print("¡Ganaste!")
- else:
-    print("¡Perdiste!")
+    # CONDICIONES DE JUEGO
+    if jugador == computadora:
+        print("Empate!")
+    elif (jugador == "Piedra" and computadora == "Tijera") or \
+         (jugador == "Papel" and computadora == "Piedra") or \
+         (jugador == "Tijera" and computadora == "Papel"):
+        print("¡Ganaste!")
+    else:
+        print("¡Perdiste!")
 
-#REINICIAR JUEGO
- if input("Jugamos Otra vez? (si/no): ").title() == "Si:
-    print("Vamos de nuevo")
-    continue
- else:
-    print("Gracias por jugar")
-    break
-
-
+    # REINICIAR JUEGO
+    if input("¿Jugamos otra vez? (si/no): ").lower() == "si":
+        print("Vamos de nuevo")
+        continue
+    else:
+        print("Gracias por jugar")
+        break
 
