@@ -1,5 +1,4 @@
 ---
-title: "Juego Piedra Papel Tijera"
 author: "Yandry Alvarez"
 ---
 
