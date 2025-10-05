@@ -2,7 +2,7 @@
 author: "Yandry Alvarez"
 ---
 
-# Juego Piedra Papel Tijera
+# Juego Tradicional en Python
 
 Desarrollo del juego Piedra, Papel y Tijera en Python  
 
