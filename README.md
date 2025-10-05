@@ -14,6 +14,7 @@ Una vez ya se puede evidenciar el proceso lógico que sigue el programa podemos 
 
 ## Código Python del Juego Tradicional
 ```python
+
 import random
 # BUCLE DE INICIO DE JUEGO
 while True:
