@@ -23,7 +23,6 @@ Una vez ya se puede evidenciar el proceso lógico que sigue el programa, podemos
 ```python
 import random
 
-# BUCLE DE INICIO DE JUEGO
 while True:
 
     print("Bienvenido al juego Piedra, Papel o Tijera")
