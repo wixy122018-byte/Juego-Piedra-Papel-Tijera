@@ -10,7 +10,9 @@ Diagrama Funcional:
 Este diagrama muestra el flujo lógico básico del juego Piedra, Papel o Tijera, ayudando a entender cómo se toman las decisiones entre las opciones y determina el ganador de cada partida.
 
 Una vez ya se puede evidenciar el proceso lógico que sigue el programa podemos avanzar el código en Python siguiendo la misma estructura del diagrama
-## Agrega tu código Python aquí
+
+
+## Código Python del Juego Tradicional
 
 ```python
 import random
