@@ -20,6 +20,9 @@ Una vez ya se puede evidenciar el proceso lógico que sigue el programa, podemos
 
 ## Código Python del Juego Tradicional
 
+[Descargar JUEGO PIEDRA-PAPEL.py](https://github.com/wixy122018-byte/Juego-Piedra-Papel-Tijera/raw/main/JUEGO%20PIEDRA-PAPEL.py)
+
+
 ```python
 import random
 
