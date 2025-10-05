@@ -1,13 +1,3 @@
-
-### 2. Fondo negro y letras blancas  
-El bloque de código ya aparece con fondo oscuro en GitHub. Si quieres que más partes del README tengan fondo negro y letras blancas, puedes usar HTML:
-
-```markdown
-<div style="background-color:#1a1a1a; color:white; padding:20px;">
-  <h2>Sección personalizada</h2>
-  <p>Este texto aparece con fondo negro y letras blancas.</p>
-  <a href="https://www.python.org" style="color: #3498db;">Enlace azul a Python.org</a>
-</div>
 # Juego-Piedra-Papel-Tijera
 Desarrollo del Juego Piedra Papel y Tijera en Python 
 
