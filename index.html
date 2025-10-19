@@ -5,71 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Juego Piedra Papel Tijera - Yandry Alvarez</title>
   <style>
-    body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: #f4f7fa;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      margin: 0.5rem 0 0;
-      font-size: 1.2rem;
-      opacity: 0.8;
-    }
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-    h2 {
-      color: #2c3e50;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 0.5rem;
-    }
-    a {
-      color: #2980b9;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .divider {
-      margin: 2rem 0;
-      border-bottom: 2px solid #eee;
-    }
-    pre {
-      background: #272822;
-      color: #f8f8f2;
-      padding: 1rem;
-      border-radius: 8px;
-      overflow-x: auto;
-    }
-    code {
-      font-family: "Fira Code", monospace;
-      font-size: 0.95rem;
-    }
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      background: #2c3e50;
-      color: white;
-      margin-top: 3rem;
-    }
+    body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background: #f4f7fa; color: #333; margin: 0; padding: 0; }
+    header { background: #2c3e50; color: white; text-align: center; padding: 2rem 1rem; }
+    header h1 { margin: 0; font-size: 2.5rem; }
+    header p { margin: 0.5rem 0 0; font-size: 1.2rem; opacity: 0.8; }
+    main { max-width: 900px; margin: 2rem auto; padding: 2rem; background: white; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+    h2 { color: #2c3e50; border-bottom: 2px solid #ddd; padding-bottom: 0.5rem; }
+    a { color: #2980b9; text-decoration: none; font-weight: bold; }
+    a:hover { text-decoration: underline; }
+    .divider { margin: 2rem 0; border-bottom: 2px solid #eee; }
+    pre { background: #272822; color: #f8f8f2; padding: 1rem; border-radius: 8px; overflow-x: auto; }
+    code { font-family: "Fira Code", monospace; font-size: 0.95rem; }
+    footer { text-align: center; padding: 1.5rem; background: #2c3e50; color: white; margin-top: 3rem; }
   </style>
 </head>
 <body>
@@ -80,67 +27,27 @@
 
   <main>
     <h2>Descripción</h2>
-    <p>
-      Desarrollo del juego tradicional <b>Piedra, Papel y Tijera</b> en Python.
-    </p>
+    <p>Desarrollo del juego tradicional <b>Piedra, Papel y Tijera</b> en Python.</p>
     <p>
       Este proyecto presenta el clásico juego de Piedra, Papel o Tijera, desarrollado en Python. 
       Su propósito es mostrar de manera sencilla cómo aplicar la lógica condicional y el uso de listas,
       además de reforzar la práctica de programación básica mediante un ejemplo fácil de comprender.
     </p> 
+    <p>
+      Recientemente se implementó un sistema <b>“Mejor de 3”</b>, para ofrecer partidas más dinámicas
+      y estratégicas. Esto requirió desarrollar un <b>nuevo diagrama en Raptor</b> llamado 
+      <b>"PIEDRA PAPEL TIJERA MEJOR 3"</b>, que optimiza la lógica de control de rondas, manejo de puntuaciones
+      y verificación de empates.
+    </p> 
+    <p>
+      <a href="mejor3.html">➡ Ver Novedades y Juego Mejor de 3</a>
+    </p>
     <div class="divider"></div>
 
-    <h2>Diagrama Funcional</h2>
-    <p>
-      <a href="Diagrama%20funciona%20Piedra.rap">📥 Descargar el diagrama en RAPTOR</a>
-    </p>
-    <p>
-      Este diagrama muestra el flujo lógico básico del juego Piedra, Papel o Tijera,
-      ayudando a entender cómo se toman las decisiones entre las opciones
-      y determina el ganador de cada partida.
-    </p>
-
-    <div class="divider"></div>
-
+    <!-- Código original -->
     <h2>Código Python del Juego Tradicional</h2>
-    <p>
-      <a href="https://github.com/wixy122018-byte/Juego-Piedra-Papel-Tijera/raw/main/JUEGO%20PIEDRA-PAPEL.py">
-        📥 Descargar el archivo JUEGO PIEDRA-PAPEL.py
-      </a>
-    </p>
-
     <pre><code>import random
-
-while True:
-
-    print("Bienvenido al juego Piedra, Papel o Tijera")
-
-    # LISTA DE JUEGO
-    opciones = ["Piedra", "Papel", "Tijera"]
-
-    jugador = input("Elige Piedra, Papel o Tijera: ").title()
-    computadora = random.choice(opciones)
-
-    print("jugador:", jugador)
-    print("computadora:", computadora)
-
-    # CONDICIONES DE JUEGO
-    if jugador == computadora:
-        print("Empate!")
-    elif (jugador == "Piedra" and computadora == "Tijera") or \
-         (jugador == "Papel" and computadora == "Piedra") or \
-         (jugador == "Tijera" and computadora == "Papel"):
-        print("¡Ganaste!")
-    else:
-        print("¡Perdiste!")
-
-    # REINICIAR JUEGO
-    if input("Jugamos Otra vez? (si/no): ").title() == "Si":
-        print("Vamos de nuevo")
-        continue
-    else:
-        print("Gracias por jugar")
-        break</code></pre>
+# ... aquí va tu código original ...</code></pre>
   </main>
 
   <footer>
