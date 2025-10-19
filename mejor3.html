@@ -28,19 +28,22 @@
   <main>
     <h2>Novedades – Mejor de 3</h2>
     <p>
-      El juego ahora se decide al <b>mejor de 3 rondas</b>, agregando estrategia y emoción a cada partida. 
-      Cada jugador acumula puntos, y solo al ganar 2 de las 3 rondas se determina el ganador final.
-    </p>
-    <p>
-      Se desarrolló un nuevo <b>diagrama en Raptor</b> llamado <b>"PIEDRA PAPEL TIJERA MEJOR 3"</b>, que detalla:
+      La principal novedad de esta versión es la implementación del juego al <b>mejor de 3 rondas</b>, agregando emoción y estrategia a cada partida.  
+      Se aplicó el uso de <b>tuplas</b> para almacenar las opciones del juego y <b>funciones (def)</b> para estructurar la lógica de manera modular:
     </p>
     <ul>
-      <li>Variables de conteo de rondas y puntajes.</li>
-      <li>Bucle principal controlando las rondas hasta que un jugador alcance 2 puntos.</li>
-      <li>Condicionales para evaluar victorias, derrotas y empates en cada ronda.</li>
+      <li><b>Juego()</b>: solicita la elección del jugador y genera la elección aleatoria de la computadora.</li>
+      <li><b>J1_C1()</b>: evalúa el resultado de cada ronda y determina empate, victoria o derrota.</li>
+      <li><b>jugar_mejor_de_tres()</b>: controla la secuencia de rondas hasta que un jugador gane 2 de 3.</li>
+      <li><b>Reiniciar()</b>: pregunta si se desea jugar otra vez, reiniciando el juego o finalizando la partida.</li>
     </ul>
     <p>
-      <a href="Diagrama_mejor3.rap">📥 Descargar Diagrama Mejor de 3 en RAPTOR</a>
+      <a href="PIEDRA PAPEL TIJERA MEJOR 3.rap">📥 Descargar Diagrama Mejor de 3 en RAPTOR</a>  
+      <br>
+      <a href="JUEGO PIEDRA PAPEL MEJOR 3.py">📥 Descargar Código Python Mejor de 3</a>
+    </p>
+    <p>
+      Los diagramas permiten visualizar el flujo de decisiones, bucles y puntuaciones, facilitando la comprensión de la lógica tanto para jugadores como para futuros desarrolladores.
     </p>
     <p>
       <a href="index.html">⬅ Volver a la página principal</a>
@@ -55,13 +58,14 @@ opciones = ("Piedra", "Papel", "Tijera")
 
 # BUCLE DE INICIO DE JUEGO
 while True:
+
     print("Bienvenido al juego Piedra, Papel o Tijera")
-    print("El juego se decide al mejor de 3 rondas\n")
+    print("El juego se decide al mejor de 3 rondas\n")  # Salto de línea agregado
 
     # LISTA DE JUEGO
     def Juego():
         jugador = input("Elige Piedra, Papel o Tijera: ").title()
-        computadora = random.choice(opciones)
+        computadora = (random.choice(opciones))
         print()
         print("jugador:", jugador)
         print("computadora:", computadora)
@@ -73,9 +77,7 @@ while True:
         if jugador == computadora:
             print("¡Empate!\n")
             return 0
-        elif (jugador == "Piedra" and computadora == "Tijera") or \
-             (jugador == "Papel" and computadora == "Piedra") or \
-             (jugador == "Tijera" and computadora == "Papel"):
+        elif (jugador == "Piedra" and computadora == "Tijera") or (jugador == "Papel" and computadora == "Piedra") or (jugador == "Tijera" and computadora == "Papel"):
             print("¡Ganaste!\n")
             return 1
         else:
@@ -107,14 +109,15 @@ while True:
     def Reiniciar():
         if input("¿Jugamos Otra vez? (si/no): ").title() == "Si":
             print("Vamos de nuevo")
-            return True
+            return True  # Indicar que se reinicia
         else:
             print("Gracias por jugar")
-            return False
+            return False  # Indicar que no se reinicia
 
     # EJECUTAR JUEGO
     jugar_mejor_de_tres()
 
+    # Preguntar si se juega otra vez
     if not Reiniciar():
         break</code></pre>
   </main>
@@ -124,4 +127,3 @@ while True:
   </footer>
 </body>
 </html>
-
