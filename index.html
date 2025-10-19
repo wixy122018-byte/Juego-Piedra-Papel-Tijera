@@ -27,27 +27,60 @@
 
   <main>
     <h2>Descripción</h2>
-    <p>Desarrollo del juego tradicional <b>Piedra, Papel y Tijera</b> en Python.</p>
     <p>
-      Este proyecto presenta el clásico juego de Piedra, Papel o Tijera, desarrollado en Python. 
-      Su propósito es mostrar de manera sencilla cómo aplicar la lógica condicional y el uso de listas,
-      además de reforzar la práctica de programación básica mediante un ejemplo fácil de comprender.
-    </p> 
+      Desarrollo del juego tradicional <b>Piedra, Papel y Tijera</b> en Python.
+      Su propósito es enseñar lógica condicional, uso de listas y estructura de código de manera clara y sencilla.
+    </p>
     <p>
-      Recientemente se implementó un sistema <b>“Mejor de 3”</b>, para ofrecer partidas más dinámicas
-      y estratégicas. Esto requirió desarrollar un <b>nuevo diagrama en Raptor</b> llamado 
-      <b>"PIEDRA PAPEL TIJERA MEJOR 3"</b>, que optimiza la lógica de control de rondas, manejo de puntuaciones
-      y verificación de empates.
-    </p> 
+      Se ha elaborado un diagrama en Raptor que representa la lógica básica de decisiones del juego,
+      mostrando cómo se determina el ganador en cada partida.
+    </p>
+    <p>
+      Además, se implementó recientemente un <b>sistema Mejor de 3</b>, con un nuevo diagrama llamado
+      <b>"PIEDRA PAPEL TIJERA MEJOR 3"</b>, optimizando la experiencia de juego mediante rondas acumulativas y control de puntajes.
+    </p>
     <p>
       <a href="mejor3.html">➡ Ver Novedades y Juego Mejor de 3</a>
     </p>
+
     <div class="divider"></div>
 
-    <!-- Código original -->
+    <h2>Diagrama Funcional</h2>
+    <p>
+      <a href="Diagrama_basico.rap">📥 Descargar Diagrama Básico en RAPTOR</a>  
+      <br>
+      Este diagrama muestra el flujo lógico del juego clásico, útil para comprender cómo se toman las decisiones entre las opciones y determinar el ganador.
+    </p>
+
+    <div class="divider"></div>
+
     <h2>Código Python del Juego Tradicional</h2>
     <pre><code>import random
-# ... aquí va tu código original ...</code></pre>
+
+opciones = ["Piedra", "Papel", "Tijera"]
+
+while True:
+    print("Bienvenido al juego Piedra, Papel o Tijera")
+    jugador = input("Elige Piedra, Papel o Tijera: ").title()
+    computadora = random.choice(opciones)
+    print("Jugador:", jugador)
+    print("Computadora:", computadora)
+
+    if jugador == computadora:
+        print("Empate!")
+    elif (jugador == "Piedra" and computadora == "Tijera") or \
+         (jugador == "Papel" and computadora == "Piedra") or \
+         (jugador == "Tijera" and computadora == "Papel"):
+        print("¡Ganaste!")
+    else:
+        print("¡Perdiste!")
+
+    if input("Jugamos Otra vez? (si/no): ").title() == "Si":
+        print("Vamos de nuevo")
+        continue
+    else:
+        print("Gracias por jugar")
+        break</code></pre>
   </main>
 
   <footer>
