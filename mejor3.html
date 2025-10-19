@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego Piedra Papel Tijera Mejor 3 - Yandry Alvarez</title>
+  <style>
+    body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background: #f4f7fa; color: #333; margin: 0; padding: 0; }
+    header { background: #2c3e50; color: white; text-align: center; padding: 2rem 1rem; }
+    header h1 { margin: 0; font-size: 2.5rem; }
+    header p { margin: 0.5rem 0 0; font-size: 1.2rem; opacity: 0.8; }
+    main { max-width: 900px; margin: 2rem auto; padding: 2rem; background: white; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+    h2 { color: #2c3e50; border-bottom: 2px solid #ddd; padding-bottom: 0.5rem; }
+    a { color: #2980b9; text-decoration: none; font-weight: bold; }
+    a:hover { text-decoration: underline; }
+    .divider { margin: 2rem 0; border-bottom: 2px solid #eee; }
+    pre { background: #272822; color: #f8f8f2; padding: 1rem; border-radius: 8px; overflow-x: auto; }
+    code { font-family: "Fira Code", monospace; font-size: 0.95rem; }
+    footer { text-align: center; padding: 1.5rem; background: #2c3e50; color: white; margin-top: 3rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Juego Piedra Papel Tijera Mejor 3</h1>
+    <p>Proyecto en Python - Autor: <strong>Yandry Alvarez</strong></p>
+  </header>
+
+  <main>
+    <h2>Nuevas Novedades – Mejor de 3</h2>
+    <p>
+      La gran novedad del proyecto es la incorporación del sistema <b>“Mejor de 3”</b>, que transforma la experiencia de juego de manera significativa.
+      Ahora, el jugador compite en rondas sucesivas, acumulando puntos hasta determinar un ganador definitivo.
+    </p>
+    <p>
+      Para soportar esta nueva lógica, se desarrolló un <b>nuevo diagrama en Raptor</b> llamado
+      <b>"PIEDRA PAPEL TIJERA MEJOR 3"</b>, que refleja el flujo actualizado:
+    </p>
+    <ul>
+      <li>Se añadieron variables de conteo de rondas y puntuaciones individuales.</li>
+      <li>Se implementó un bucle principal que controla las tres rondas y verifica el ganador de cada una.</li>
+      <li>Se ajustaron las condicionales para evaluar empates, victorias y derrotas dentro de cada ronda.</li>
+    </ul>
+    <p>
+      <a href="index.html">⬅ Volver a la página principal</a>
+    </p>
+
+    <div class="divider"></div>
+
+    <h2>Código Python – Mejor de 3</h2>
+    <pre><code>import random
+
+opciones = ["Piedra", "Papel", "Tijera"]
+
+def jugar_mejor_de_3():
+    puntaje_jugador = 0
+    puntaje_computadora = 0
+
+    for ronda in range(1, 4):
+        print(f"\nRonda {ronda}")
+        jugador = input("Elige Piedra, Papel o Tijera: ").title()
+        computadora = random.choice(opciones)
+        print("Jugador:", jugador)
+        print("Computadora:", computadora)
+
+        if jugador == computadora:
+            print("Empate!")
+        elif (jugador == "Piedra" and computadora == "Tijera") or \
+             (jugador == "Papel" and computadora == "Piedra") or \
+             (jugador == "Tijera" and computadora == "Papel"):
+            print("¡Ganaste esta ronda!")
+            puntaje_jugador += 1
+        else:
+            print("¡Perdiste esta ronda!")
+            puntaje_computadora += 1
+
+    print(f"\nResultados Finales: Jugador {puntaje_jugador} - Computadora {puntaje_computadora}")
+    if puntaje_jugador > puntaje_computadora:
+        print("¡Felicidades! Ganaste el juego Mejor de 3")
+    elif puntaje_jugador < puntaje_computadora:
+        print("¡La computadora ganó el juego Mejor de 3!")
+    else:
+        print("¡El juego terminó en empate!")
+
+while True:
+    print("\nBienvenido al juego PIEDRA PAPEL TIJERA MEJOR 3")
+    jugar_mejor_de_3()
+    if input("\n¿Deseas jugar otra vez? (si/no): ").title() != "Si":
+        print("Gracias por jugar")
+        break</code></pre>
+  </main>
+
+  <footer>
+    © 2025 - Proyecto desarrollado por <strong>Yandry Alvarez</strong>
+  </footer>
+</body>
+</html>
